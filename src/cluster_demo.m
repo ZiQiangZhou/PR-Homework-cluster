@@ -1,6 +1,6 @@
 close all
 clear
-rawData1=textread('¡../data/julei1.txt');
+rawData1=textread('../data/julei1.txt');
 [IDX, C] = kmeans(rawData1, 2);
  figure(1),
  for i=1:2
@@ -13,7 +13,7 @@ min_cluster_size_ratio = 0.01;
 min_clusters = 5;
 min_maxima_ratio = 0.005;
 min_neighborhood_size = 3;
-% Ê±¼äÒÑ¹ý 512.367924 Ãë¡£
+% Ê±ï¿½ï¿½ï¿½Ñ¹ï¿½ 512.367924 ï¿½ë¡£
 tic
 [RD,CD,order]=optics(rawData2,minPoints);
 toc
