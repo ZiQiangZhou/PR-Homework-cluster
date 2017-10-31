@@ -13,7 +13,7 @@ min_cluster_size_ratio = 0.01;
 min_clusters = 5;
 min_maxima_ratio = 0.005;
 min_neighborhood_size = 3;
-% ʱ���ѹ� 512.367924 �롣
+% cost time 512.367924s
 tic
 [RD,CD,order]=optics(rawData2,minPoints);
 toc
