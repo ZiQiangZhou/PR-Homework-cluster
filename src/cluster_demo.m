@@ -7,6 +7,7 @@ rawData1=textread('../data/julei1.txt');
     plot(rawData1(IDX==i,1),rawData1(IDX==i,2),'.');hold on
  end
  hold off
+print(1,'../result/result1.bmp','-dbmp16m');
 rawData2=textread('../data/julei2.txt');
 minPoints=400;
 min_cluster_size_ratio = 0.01;
@@ -33,8 +34,10 @@ nghsize = max(nghsize,min_neighborhood_size);
 hold off
 sstart=[1,peaksLoc];
 eend=[peaksLoc,size(orderData,1)];
-figure,
+figure(2),
+color=rand(size(sstart,2),3);
 for i=1:size(sstart,2)
-    plot(orderData(sstart(i):eend(i),1),orderData(sstart(i):eend(i),2),'.'),hold on
+    plot(orderData(sstart(i):eend(i),1),orderData(sstart(i):eend(i),2),'.','Color',color(i,:)),hold on
 end
 hold off
+print(2,'../result/result2.bmp','-dbmp16m');
