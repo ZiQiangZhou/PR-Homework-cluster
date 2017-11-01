@@ -1,2 +1,2 @@
 # PR-Homework-cluster
-pattern recognition homework
+pattern recognition homework 1
