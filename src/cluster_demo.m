@@ -1,7 +1,7 @@
 close all
 clear
 rawData1=textread('../data/julei1.txt');
-[IDX, C] = kmeans(rawData1, 2);
+[IDX, Color] = kmeans(rawData1, 2);
  figure(1),
  for i=1:2
     plot(rawData1(IDX==i,1),rawData1(IDX==i,2),'.');hold on
@@ -35,9 +35,10 @@ hold off
 sstart=[1,peaksLoc];
 eend=[peaksLoc,size(orderData,1)];
 figure(2),
-color=rand(size(sstart,2),3);
+% color=rand(size(sstart,2),3);
+Color=linspecer(size(sstart,2));
 for i=1:size(sstart,2)
-    plot(orderData(sstart(i):eend(i),1),orderData(sstart(i):eend(i),2),'.','Color',color(i,:)),hold on
+    plot(orderData(sstart(i):eend(i),1),orderData(sstart(i):eend(i),2),'.','Color',Color(i,:)),hold on
 end
 hold off
 print(2,'../result/result2.bmp','-dbmp16m');
